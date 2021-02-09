@@ -1,7 +1,7 @@
 from books import app
 
 
-address = '192.168.1.200'
+address = '0.0.0.0'
 port = 8000
 
 app.run(host=address, port=port, debug=True)
