@@ -8,3 +8,7 @@ api = Blueprint('api', __name__)
 def get_author(author_id):
     author = Author.get(author_id)
     return jsonify(dict(author))
+
+@api.route('/authors/', methods=['GET'])
+def get_authors(offset=0, count=10):
+    return jsonify(Author.list(offset, count))

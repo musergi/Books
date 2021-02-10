@@ -24,6 +24,11 @@ class Author:
         if author_dict is None:
             raise IndexError('Author does not exist')
         return Author(**author_dict)
+    
+    @staticmethod
+    def list(offset, count):
+        authors = list(dict(Author(**row)) for row in database.execute(f'SELECT * FROM authors LIMIT {count} OFFSET {offset}'))
+        return authors
 
     @staticmethod
     def create_author(names='', surnames='', pseudonym=''):
