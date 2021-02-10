@@ -1,0 +1,13 @@
+.title {
+    display: inline-block;
+    font-size: 2.5em;
+    padding: 0.5em 1em;
+    border-radius: 1em 0 1em 0;
+    margin: 1em 0;
+    color: var(--blue);
+    background-color: var(--beige);
+}
+
+.main-container {
+    margin: 2em 4em;
+}

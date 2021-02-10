@@ -1,0 +1,29 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    all: unset;
+    padding: 1em 1.5em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    background-color: var(--brown);
+}
+
+button:hover {
+    background-color: var(--light-brown);
+}
+
+li {
+    list-style: none;
+    margin: 0.25em 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+}

@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+:root {
+    --green: #8d8741;
+    --blue: #659dbd;
+    --light-brown: #daad86;
+    --brown: #bc986a;
+    --beige: #fbeec1;
+}
+html, body {font-family: 'Hammersmith One', sans-serif; margin: 0;}
+html {min-height: 100%; background-color: var(--blue);}
