@@ -17,3 +17,11 @@ def get_author(author_id):
 @api.route('/authors/', methods=['GET'])
 def get_authors(offset=0, count=10):
     return jsonify(Author.list(offset, count))
+
+@api.route('/authors/', methods=['POST'])
+def post_author():
+    return 200, 'OK'
+
+@api.route('/author/<int:author_id>/', methods=['DELETE'])
+def delete_author():
+    return 200, 'OK'
