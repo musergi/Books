@@ -4,6 +4,11 @@ from .model import Author
 
 api = Blueprint('api', __name__)
 
+@api.after_request
+def enable_cors(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
 @api.route('/author/<int:author_id>/', methods=['GET'])
 def get_author(author_id):
     author = Author.get(author_id)
