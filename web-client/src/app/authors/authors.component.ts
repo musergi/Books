@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Author } from '../author';
+import { AuthorService } from '../author.service';
 
 @Component({
   selector: 'app-authors',
@@ -8,20 +9,22 @@ import { Author } from '../author';
 })
 export class AuthorsComponent implements OnInit {
 
-  authors: Author[] = [
-    { id : 1, names : ['Brandon'], surnames : ['Sanderson'] },
-    { id : 2, names : ['John', 'Ronald', 'Reuel'], surnames : ['Tolkien'] }
-  ];
+  authors: Author[] = [];
+  isAdding: boolean = false;
 
-  get_long_name(author: Author): string {
-    if (author.pseudonym) {
-      return author.pseudonym;
-    }
-    return author.names.join(' ') + ' ' + author.surnames.join(' ')
-  }
-
-  constructor() { }
+  constructor(private authorService: AuthorService) { }
 
   ngOnInit(): void {
+    this.authorService.getAuthors().subscribe(authors => this.authors = authors);
+  }
+
+  get_long_name(author: Author): string {
+    if (author.pseudonym)
+      return author.pseudonym;
+    return author.names.join(' ') + ' ' + author.surnames.join(' ');
+  }
+
+  toggleAdding() {
+    this.isAdding = !this.isAdding;
   }
 }

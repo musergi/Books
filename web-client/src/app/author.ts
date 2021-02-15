@@ -1,6 +1,8 @@
-export interface Author {
-    id: number;
-    names: string[];
-    surnames: string[];
-    pseudonym?: string
+export class Author {
+  constructor(
+      public id?: number,
+      public names: string[] = [],
+      public surnames: string[] = [],
+      public pseudonym: string = ""
+  ) {}
 }

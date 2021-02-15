@@ -1,7 +1,18 @@
-<ul>
-  <li *ngFor="let author of authors">
-    <button onclick="">
-      {{get_long_name(author)}}
-    </button>
-  </li>
-</ul>
+<div *ngIf="!isAdding">
+  <ul>
+    <li *ngFor="let author of authors">
+      <button class="author-button" onclick="">
+        {{get_long_name(author)}}
+      </button>
+    </li>
+  </ul>
+  <button class="add-button" (click)="toggleAdding();">
+    Add author
+  </button>
+</div>
+<div *ngIf="isAdding">
+  <app-author-form></app-author-form>
+  <button class="add-button" (click)="toggleAdding();">
+    Cancel
+  </button>
+</div>

@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
+import { AuthorFormComponent } from './author-form/author-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    AuthorFormComponent
   ],
   imports: [
     BrowserModule,

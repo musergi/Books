@@ -12,11 +12,20 @@ button {
     padding: 1em 1.5em;
     border-top-left-radius: 1em;
     border-bottom-right-radius: 1em;
-    background-color: var(--brown);
+    background-color: var(--green);
 }
 
 button:hover {
     background-color: var(--light-brown);
+}
+
+.author-button {
+    color: black;
+    background-color: var(--brown);
+}
+
+.add-button {
+    margin-top: 1em;
 }
 
 li {
