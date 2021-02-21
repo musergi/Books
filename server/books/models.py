@@ -17,3 +17,10 @@ class Author(models.Model):
         if self.pseudonym:
             return self.pseudonym
         return f'{self.names} {self.surnames}'
+
+class Book(models.Model):
+    title = models.TextField()
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.title} by {self.author}'
